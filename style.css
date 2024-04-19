@@ -1,6 +1,7 @@
 .sectionLeft {
     float: left;
     width: 80%;
+    position: relative;
 }
 
 .sectionRight {
@@ -49,4 +50,8 @@ body {
 .shoptButton:hover { 
     background-color: #725987 ;
     transition: all .2s ease-in-out;
+}
+.smaller { 
+    width: 50px; 
+    height: auto; 
 }
