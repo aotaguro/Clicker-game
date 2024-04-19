@@ -1,20 +1,22 @@
 .sectionLeft {
     float: left;
-    width: 80%;
+    width: 70%;
     position: relative;
 }
-
 .sectionRight {
     float: right;
     width: 20%;
+    margin-right:50px;
+    margin-top: 50px; 
+    position: relative; 
 }
-
 .scoreContainer {
     background-color: #a782c5;
     padding: 10px;
     width: 50%;
     border-radius: 10px;
     margin: 0 auto;
+    font-size: 24px;
 }
 
 body {
@@ -26,7 +28,7 @@ body {
 }
 
 #Main {
-    height: 260px;
+    height: 300px;
     position:relative; 
     transition: all .2s ease-in-out;
 }
@@ -47,11 +49,34 @@ body {
     width: 100%;
     margin: 10px 0px 10px 0px; 
 }
-.shoptButton:hover { 
+.shopButton:hover { 
     background-color: #725987 ;
     transition: all .2s ease-in-out;
+    transform: scale(1.05);
+}
+.shopButton:active { 
+    transform: scale(.99);
+}
+.shotButton #nameAndCost p { 
+    margin: 0px; 
+    width:60%; 
+}
+.shopButton #nameAndCost p:first-of-type { 
+    font-size: 24px;
+}
+
+.shopButton #amount { 
+    font-size: 48px; 
+    
 }
 .smaller { 
     width: 50px; 
     height: auto; 
+}
+.unselectable { 
+    user-select: none;
+}
+
+.sectionFooter { 
+    margin-top:20%;
 }

@@ -5,7 +5,8 @@ var beats = 0;
 var melodyCost = 100;
 var melodies = 0;
 var clickingPower = 1;
-
+var tempoCost = 1000; 
+var tempos = 0; 
 
 
 
@@ -35,6 +36,19 @@ function buyMelody() {
         updateScorePerSecond();
     }
 }
+function buyTempo() {
+    if (score >= tempoCost) {
+        score = score - tempoCost;
+        tempos = tempos + 1;
+        tempoCost = Math.round(tempoCost * 1.15);
+
+        document.getElementById("score").innerHTML = score;
+        document.getElementById("tempoCost").innerHTML = tempoCost;
+        document.getElementById("tempos").innerHTML = tempos;
+        updateScorePerSecond();
+    }
+}
+
 
 function addToScore(amount) {
     score = score + amount;
@@ -43,7 +57,7 @@ function addToScore(amount) {
 
 
 function updateScorePerSecond() {
-    vibespersecond = beats + melodies * 5;
+    vibespersecond = beats + melodies * 5 + tempos * 70;
     document.getElementById("vibespersecond").innerHTML = vibespersecond;
 }
 
@@ -51,6 +65,7 @@ function updateScorePerSecond() {
 setInterval(function () {
     score = score + beats;
     score = score + melodies * 5;
+    score = score + tempos * 70;  
     document.getElementById("score").innerHTML = score;
 
     document.title = score + " Vibes - Vibe Clicker";
