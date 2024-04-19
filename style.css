@@ -1,37 +1,52 @@
+.sectionLeft {
+    float: left;
+    width: 80%;
+}
 
+.sectionRight {
+    float: right;
+    width: 20%;
+}
 
-
+.scoreContainer {
+    background-color: #a782c5;
+    padding: 10px;
+    width: 50%;
+    border-radius: 10px;
+    margin: 0 auto;
+}
 
 body {
-    background-color: #e0bbff; /* Pastel purple */
+    background-color: #e0bbff;
+    /* Pastel purple */
     color: #333;
-    font-family: Arial, sans-serif;
+    font-family: 'Trebuchet MS';
+    font-size: 20px;
+}
+
+#Main {
+    height: 260px;
+    position:relative; 
+    transition: all .2s ease-in-out;
+}
+#Main:hover {  
+    transform: scale(1.10);
+}
+#Main:active { 
+    transform: scale(.99);
+}
+
+.center {
     text-align: center;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
- }
- 
- 
- #score {
-    font-size: 36px;
-    margin-bottom: 20px;
-    font-family:'Trebuchet MS';
- }
- 
- 
- #Main {
-    height:50%;
- }
- 
- 
- 
- 
- 
- 
- 
- 
+}
+.shopButton { 
+    background-color: #a782c5;
+    transition: all .2s ease-in-out;
+    border-radius: 10px; 
+    width: 100%;
+    margin: 10px 0px 10px 0px; 
+}
+.shoptButton:hover { 
+    background-color: #725987 ;
+    transition: all .2s ease-in-out;
+}

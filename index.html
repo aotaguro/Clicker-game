@@ -1,18 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Lofi Clicker</title>
-   <link rel="stylesheet" href="style.css">
-</head>
-<body>
-   <div id="score">0</div>
-   <script src="script.js"></script>
-   <img id="Main" src="img/1691345231019-removebg.png" alt="Beats" onclick="addToScore(clickingPower) ">
 
-   <button onclick="buybeat()"> Beats [<span id="beatcost">15</span>] -- <span id ="beats">0</span> </button>
-   <button onclick="buyMelody()"> Melody [<span id="melodyCost">100</span>] -- <span id ="melodies">0</span> </button>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lofi Clicker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="sectionLeft">
+        <div class="center">
+            <div class="scoreContainer">
+                <span id="score">0</span> Vibes<br>
+                <span id="vibespersecond">0</span> Vibes per second<br>
+            </div>
+            <br>
+            <div class="clickerContainer">
+                <img id="Main" src="img/1691345231019-removebg.png" alt="Vibes" onclick="addToScore(clickingPower) ">
+            </div>
+        </div>
+    </div>
+
+    <div class="sectionRight">
+        <table class="shopButton" onclick="buybeat()"> 
+            <tr> 
+                <td id="image"><img src="img/beat.png"></td>
+                <td id="nameAndCost">
+                    <p>Beat</p>
+                    <p><span id="beatcost">15</span> Vibes</p>
+                </td>
+                <td id="amount"><span id="beats">0</span></td>
+            </tr>
+            </table>
+    </div>
 
 </body>
+
 </html>
