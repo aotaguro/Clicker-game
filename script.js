@@ -5,8 +5,8 @@ var beats = 0;
 var melodyCost = 100;
 var melodies = 0;
 var clickingPower = 1;
-var tempoCost = 1000; 
-var tempos = 0; 
+var tempoCost = 1000;
+var tempos = 0;
 
 
 
@@ -51,7 +51,7 @@ function buyTempo() {
 
 
 function addToScore(amount) {
-    score = score + amount;
+    score += amount; 
     document.getElementById("score").innerHTML = score;
 };
 
@@ -60,17 +60,71 @@ function updateScorePerSecond() {
     vibespersecond = beats + melodies * 5 + tempos * 70;
     document.getElementById("vibespersecond").innerHTML = vibespersecond;
 }
+function loadGame() {
+    var saveGame = JSON.parse(localStorage.getItem("gameSave"));
+    if (saveGame !== null) {
+        score = saveGame.score || score;
+        clickingPower = saveGame.clickingPower || clickingPower;
+        beatcost = saveGame.beatcost || beatcost;
+        beats = saveGame.beats || beats;
+        melodies = saveGame.melodies || melodies;
+        melodyCost = saveGame.melodyCost || melodyCost;
+        tempoCost = saveGame.tempoCost || tempoCost;
+        tempos = saveGame.tempos || tempos;
+    } else {
+        console.log("No saved game found.");
+    }
+}
+function saveGame() {
+    var gameSave = {
+        score: score,
+        clickingPower: clickingPower,
+        beatcost: beatcost,
+        beats: beats,
+        melodyCost: melodyCost,
+        melodies: melodies,
+        tempoCost: tempoCost,
+        tempos: tempos
+    };
+    localStorage.setItem("gameSave", JSON.stringify(gameSave));
+}
 
+function resetGame() {
+    if (confirm("Are you sure you want to reset your game?")) {
+        var gameSave = {};
+        localStorage.setItem("gameSave", JSON.stringify(gameSave));
+        location.reload();
+    }
+}
+window.onload = function () {
+    loadGame();
+    updateScorePerSecond();
+    document.getElementById("score").innerHTML = score;
+    document.getElementById("beatcost").innerHTML = beatcost;
+    document.getElementById("beats").innerHTML = beats;
+    document.getElementById("melodyCost").innerHTML = melodyCost;
+    document.getElementById("melodies").innerHTML = melodies;
+    document.getElementById("tempoCost").innerHTML = tempoCost;
+    document.getElementById("tempos").innerHTML = tempos;
+};
 
 setInterval(function () {
     score = score + beats;
     score = score + melodies * 5;
-    score = score + tempos * 70;  
+    score = score + tempos * 70;
     document.getElementById("score").innerHTML = score;
 
     document.title = score + " Vibes - Vibe Clicker";
 }, 1000); //1000ms = 1 sec 
 
+setInterval(function () {
+    saveGame();
+}, 30000); // 3000ms = 30 sec
 
-
+document.addEventListener("keydown", function (event) {
+    if (event.ctrlKey && event.which == 83) { // contr + s
+        event.preventDefault();
+        saveGame();
+    }
+}, false);
 
