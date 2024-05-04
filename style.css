@@ -72,6 +72,7 @@ body {
 .smaller { 
     width: 50px; 
     height: auto; 
+    padding-left: 5px;
 }
 .unselectable { 
     user-select: none;
@@ -79,4 +80,22 @@ body {
 
 .sectionFooter { 
     margin-top:20%;
+}
+.reset { 
+    border-radius: 20px;
+}
+.bottom-left { 
+    margin-bottom: 5px;
+}
+
+@keyframes scoreAnimation {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-50px); }
+}
+
+.scoreAnimation {
+    position: absolute;
+    color: #6c5ce7;
+    font-size: 24px;
+    animation: scoreAnimation 1s ease-out;
 }

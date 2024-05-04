@@ -48,12 +48,30 @@ function buyTempo() {
         updateScorePerSecond();
     }
 }
-
-
-function addToScore(amount) {
-    score += amount; 
+function addToScore(amount, event) {
+    score += amount;
     document.getElementById("score").innerHTML = score;
-};
+
+    // Create animation element
+    var animationElement = document.createElement("div");
+    animationElement.classList.add("scoreAnimation");
+    animationElement.textContent = "+1";
+    
+    // Set position of animation element based on click coordinates
+    animationElement.style.position = "absolute";
+    animationElement.style.left = event.clientX + "px"; // Adjust offset as needed
+    animationElement.style.top = event.clientY + "px"; // Adjust offset as needed
+    
+    // Append animation element to the body
+    document.body.appendChild(animationElement);
+    
+    // Remove animation element after animation completes
+    setTimeout(function() {
+        animationElement.remove();
+    }, 1000);
+}
+
+
 
 
 function updateScorePerSecond() {

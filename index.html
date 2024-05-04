@@ -21,14 +21,18 @@
                 <img id="Main" src="img/1691345231019-removebg.png" alt="Vibes" onclick="addToScore(clickingPower) ">
             </div>
         </div>
-        <div class="sectionFooter"> 
-            <h5>Lofi Clicker</h5>
-            <button onclick="resetGame();">Reset Game</button>
+        <div class="sectionFooter">
+            <div class="unselectable">
+            <h5 class="bottom-left">Lofi Clicker</h5>
+            </div>
+            <div class="bottom-left">
+                <button class="reset" onclick="resetGame();">Reset Game</button>
+            </div>
         </div>
     </div>
     <div class="sectionRight">
-        <table class="shopButton unselectable" onclick="buybeat()"> 
-            <tr> 
+        <table class="shopButton unselectable" onclick="buybeat()">
+            <tr>
                 <td id="image"><img src="img/beat.png" class="smaller"></td>
                 <td id="nameAndCost">
                     <p>Beat</p>
@@ -36,27 +40,27 @@
                 </td>
                 <td id="amount"><span id="beats">0</span></td>
             </tr>
-            </table>
-            <table class="shopButton unselectable" onclick="buyMelody()"> 
-                <tr> 
-                    <td id="image"><img src="img/melody.webp" class="smaller"></td>
-                    <td id="nameAndCost">
-                        <p>Melody</p>
-                        <p><span id="melodyCost">100</span> Vibes</p>
-                    </td>
-                    <td id="amount"><span id="melodies">0</span></td>
-                </tr>
-                </table>
-                <table class="shopButton unselectable" onclick="buyTempo()"> 
-                    <tr> 
-                        <td id="image"><img src="img/Tempo.png" class="smaller"></td>
-                        <td id="nameAndCost">
-                            <p>Tempo</p>
-                            <p><span id="tempoCost">1000</span> Vibes</p>
-                        </td>
-                        <td id="amount"><span id="tempos">0</span></td>
-                    </tr>
-                    </table>
+        </table>
+        <table class="shopButton unselectable" onclick="buyMelody()">
+            <tr>
+                <td id="image"><img src="img/melody.webp" class="smaller"></td>
+                <td id="nameAndCost">
+                    <p>Melody</p>
+                    <p><span id="melodyCost">100</span> Vibes</p>
+                </td>
+                <td id="amount"><span id="melodies">0</span></td>
+            </tr>
+        </table>
+        <table class="shopButton unselectable" onclick="buyTempo()">
+            <tr>
+                <td id="image"><img src="img/Tempo.png" class="smaller"></td>
+                <td id="nameAndCost">
+                    <p>Tempo</p>
+                    <p><span id="tempoCost">1000</span> Vibes</p>
+                </td>
+                <td id="amount"><span id="tempos">0</span></td>
+            </tr>
+        </table>
     </div>
 
 </body>
